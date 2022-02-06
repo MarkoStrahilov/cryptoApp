@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
 
-    <div className='footer p-10 bg-gray-700 text-primary-content footer-center'>
+    <div className='footer p-10 text-primary-content footer-center'style={{backgroundColor: 'rgb(0, 21, 41)'}}>
     <div>
         <p className='text-lg'>Copyright &copy; {currentYear} all rights reserved</p>
     </div>
