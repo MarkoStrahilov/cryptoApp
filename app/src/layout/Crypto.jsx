@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import { useGetCoinsQuery } from '../services/cryptoApi';
 import Card from '../shared/Card';
 import { Input } from 'antd';
+import Title from '../shared/Title';
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const Crypto = () => {
+
 
   const {data: cryptoCurrencies, isFetching} = useGetCoinsQuery(100);
   const [search, setSearch] = useState('')
@@ -18,13 +21,17 @@ const Crypto = () => {
   const cryptoCoins = cryptoCurrencies?.data?.coins
   const [crypto, setCrypto] = useState(cryptoCoins)
 
-  if(isFetching) return 'Loading ...'
+  if(isFetching) return (
+    <div className="loader-container">
+      <PacmanLoader  size={50} color='#0071bd'/>  
+    </div>
+  )
 
   return (
     <div className='crypto-cards-container'>
-        <h1>Crypto Currencies</h1>
+        <Title text='Crypto Currencies' />
         <div className="search-crypto">
-          <Input type="text" className='input input-bordered' placeholder="Search Crypto Currencies" onChange={(e) => setSearch(e.target.value)}/>
+          <Input type="text" className='input input-bordered m-4' placeholder="Search Crypto Currencies" onChange={(e) => setSearch(e.target.value)}/>
         </div>
 
         <div className="crypto-currencies-container">

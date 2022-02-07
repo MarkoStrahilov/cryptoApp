@@ -3,6 +3,8 @@ import { useGetNftsQuery } from '../services/nftApi';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import moment from 'moment';
+import PacmanLoader from "react-spinners/PacmanLoader";
+import Title from '../shared/Title'
 
 const NFTS = () => {
 
@@ -21,16 +23,21 @@ const NFTS = () => {
   const defaultDesc = 'NFTs are collectable digital assets that hold value, just like how physical art holds value'
   const defaultImage = 'https://www.cnet.com/a/img/9AFTl2qto-rh5zRSeDm3TAmpVy8=/940x0/2021/11/29/f566750f-79b6-4be9-9c32-8402f58ba0ef/richerd.png'
 
-  if (isFetching) return 'Loading ...'
+  if(isFetching) return (
+    <div className="loader-container">
+      <PacmanLoader  size={50} color='#0071bd'/>  
+    </div>
+  )
+
 
   return (
     <div className='nfts-holder'>
-        <h1>nfts</h1>
+        <Title text="Explore And Buy Unique Nfts" />
        <div className='nfts-container'>
         {nft && nft.length > 0 && nft.map((asset) => (
            <div key={asset.id} className={"card lg:card-side card-bordered nft-container"}>
              <div className="nft-credentials">
-               <img src={asset?.image_thumbnail_url || defaultImage} alt="nft" className='nft-image'/>
+               <img src={asset?.image_thumbnail_url || asset?.collection?.banner_image_url || defaultImage} alt="nft" className='nft-image'/>
                 <div className='nft-info'>
                   <h2><b>Name</b> {asset?.name}</h2>
                 </div>
@@ -44,22 +51,22 @@ const NFTS = () => {
                <div className="nft-body-container">
                <div className='nft-overview'>
                  <div className="stat-container">
-                <div className="asset-">Collection</div> 
-                <div className=''>{asset?.collection?.name}</div>
+                <div className="asset-label">Collection</div> 
+                <div className='asset-value'>{asset?.collection?.name}</div>
                 </div>
                 <div className="stat-container">
-                <div className="asset-">Creator</div> 
-                <div className=''>{!asset?.creator?.user.username ? 'not available' : asset?.creator?.user.username}</div>
+                <div className="asset-label">Creator</div> 
+                <div className='asset-value'>{asset?.creator?.user.username === null ? 'not available' : asset?.creator?.user.username}</div>
                 </div>
                </div>
                <div className='nft-overview'>
                  <div className="stat-container">
-                <div className="asset-">NFT ID</div> 
-                <div className=''>{asset?.id}</div>
+                <div className="asset-label">NFT ID</div> 
+                <div className='asset-value'>{asset?.id}</div>
                 </div>
                 <div className="stat-container">
-                <div className="asset-">Upload Date</div> 
-                <div className=''>{moment(asset?.collection?.created_date).format('llll')}</div>
+                <div className="asset-label">Upload Date</div> 
+                <div className='asset-value'>{moment(asset?.collection?.created_date).format('llll')}</div>
                 </div>
                </div>
                </div>

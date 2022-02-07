@@ -23,6 +23,12 @@ code {
     --light: rgb(179, 179, 179);
 }
 
+.loader-container {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -40,6 +46,7 @@ code {
 
 .main-container {
     width: 100%;
+    min-height: 89.3vh;
     display: flex;
     flex-direction: row;
 }
@@ -74,14 +81,16 @@ code {
 
 .heading {
     background-color: rgb(236, 236, 236);
-    padding: 3rem;
+    padding: 2.5rem;
     font-size: 2.5rem;
+    margin: auto;
 }
 
 .statistics-row {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin: 2rem 0;
 }
 
 .head-statistics {
@@ -92,6 +101,11 @@ code {
 .head-statistics h3 {
     font-size: 1rem;
     color: #777;
+}
+
+.performing-container {
+    margin: 2.5rem 2rem;
+    padding: 2rem 0;
 }
 
 .stat-value {
@@ -135,7 +149,7 @@ code {
 }
 
 .desc-link {
-    margin: 2rem 0;
+    margin: 1rem 0;
 }
 
 .crypto-body p {
@@ -144,10 +158,12 @@ code {
 
 .red {
     color: red;
+    font-weight: 600;
 }
 
 .green {
     color: green;
+    font-weight: 600;
 }
 
 .coin-head {
@@ -165,10 +181,6 @@ code {
     align-items: center;
     justify-content: space-between;
     width: 45%;
-}
-
-.crypto-cards-container {
-    width: 99%;
 }
 
 .children-container {
@@ -285,15 +297,16 @@ code {
 
 .nft-overview {
     width: 100%;
-    display: flex;
-    align-items: center;
-    margin: 1rem 0;
 }
 
 .stat-container {
-    width: 50%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    margin: 1rem 0;
+    border: 1px solid var(--light);
+    padding: .5rem;
+    border-radius: .7rem;
 }
 
 .nft-credentials {
@@ -301,10 +314,7 @@ code {
 }
 
 .nft-body-container {
-    border: 1px solid var(--light);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
     margin: 1rem 0;
-    padding: .5rem;
     border-radius: .7rem;
 }
 
@@ -316,6 +326,15 @@ code {
 
 .asset-details-container {
     margin: 1rem 0;
+}
+
+.asset-label {
+    font-weight: 500;
+    width: 50%;
+}
+
+.asset-value {
+    width: 50%;
 }
 
 .asset-details-container h1 {
@@ -346,6 +365,10 @@ code {
 
 .asset-link p {
     width: 50%;
+}
+
+.asset-stat {
+    padding: 1rem;
 }
 
 @media screen and (max-width: 1300px) {

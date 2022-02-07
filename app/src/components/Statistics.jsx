@@ -2,9 +2,9 @@ import React from 'react';
 
 const Statistics = ({title, stats}) => {
   return (
-    <div className='head-statistics'>
-        <h3>Total {title}</h3>
-        <p>{stats}</p>
+    <div class="asset-stat">
+      <div class="stat-title">{title}</div> 
+      <div class="stat-value">{stats}</div> 
     </div>
   )
 };

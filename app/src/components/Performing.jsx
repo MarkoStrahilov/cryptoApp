@@ -2,10 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useGetCoinsQuery } from '../services/cryptoApi';
 import { useGetNftsQuery } from '../services/nftApi';
-import Container from '../shared/Container';
 import Card from '../shared/Card';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const Performing = ({title,subjectData}) => {
 
@@ -23,11 +23,14 @@ const Performing = ({title,subjectData}) => {
 
   const defaultImage = 'https://www.cnet.com/a/img/9AFTl2qto-rh5zRSeDm3TAmpVy8=/940x0/2021/11/29/f566750f-79b6-4be9-9c32-8402f58ba0ef/richerd.png'
 
-  if(isFetching) return 'Loading ...'
-
+  if(isFetching) return (
+    <div className="loader-container">
+      <PacmanLoader  size={50} color='#0071bd'/>  
+    </div>
+  ) 
   if(subjectData === 'coins') {
     return (  
-      <Container>
+      <div className='performing-container'>
         <h2 className='subject-title'>{title}</h2>
         <div className="crypt-coin-holder">
              {coins && coins.length > 0 && coins.map((coin) => (
@@ -36,11 +39,11 @@ const Performing = ({title,subjectData}) => {
              </div>
              ))}
         </div>
-      </Container>
+      </div>
        );
   } else if (subjectData === 'nfts') {
     return (
-      <Container>
+      <div className='performing-container'>
         <h2 className='subject-title'>{title}</h2>
         <div className="crypt-coin-holder">
           {nftStatus && nftStatus.length > 0 && nftStatus.map((nft) => (
@@ -60,7 +63,7 @@ const Performing = ({title,subjectData}) => {
           ))}
         </div>
         <Link to={'/nfts'} className='btn btn-primary'>See more NFTS</Link>
-      </Container>
+      </div>
     )
   }
 };

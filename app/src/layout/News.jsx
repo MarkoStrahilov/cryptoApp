@@ -4,11 +4,11 @@ import { useState } from 'react';
 import { useGetNewsQuery } from '../services/newsApi';
 import Title from '../shared/Title';
 import moment from 'moment'
-import {Link} from 'react-router-dom';
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const News = () => {
 
-  const {data} = useGetNewsQuery(300)
+  const {data, isFetching} = useGetNewsQuery(100)
 
   useEffect(() => {
     
@@ -34,6 +34,12 @@ const News = () => {
   
     const images = genRandImage()
 
+    if(isFetching) return (
+      <div className="loader-container">
+        <PacmanLoader  size={50} color='#0071bd'/>  
+      </div>
+    )
+  
 
   return (
     <div className='crypto-news-container'>
