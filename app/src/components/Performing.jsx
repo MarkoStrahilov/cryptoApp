@@ -22,7 +22,6 @@ const Performing = ({title,subjectData}) => {
   const [nftStatus, setNftStatus] = useState(nftData)
 
   const defaultImage = 'https://www.cnet.com/a/img/9AFTl2qto-rh5zRSeDm3TAmpVy8=/940x0/2021/11/29/f566750f-79b6-4be9-9c32-8402f58ba0ef/richerd.png'
-  console.log(nftStatus)
 
   if(isFetching) return 'Loading ...'
 
@@ -55,7 +54,7 @@ const Performing = ({title,subjectData}) => {
                       <p>created: {moment(nft?.asset_contract?.created_date).startOf('ss').fromNow()}</p>
                     </div>
                     <div className="text-right desc-link">
-                      <a href={nft?.permalink} className="bg-slate-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Details</a>
+                      <a href={nft?.permalink} className="bg-slate-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Make Offer</a>
                     </div>
                 </div>
           ))}

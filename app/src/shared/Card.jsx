@@ -25,7 +25,7 @@ const Card = ({info, space}) => {
       <div className='crypto-coins-card'>
        <div className="coins-head">
            <p>{info.name}</p>
-           <img src={info.iconUrl} alt="crypto coin" className='coin-image'/>
+           <img src={info.iconUrl} alt="crypto coin" width={'50px'} height={'50px'}/>
        </div>
        <div className='crypto-coins-body'>
           <div className="flex">

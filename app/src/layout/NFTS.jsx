@@ -28,7 +28,7 @@ const NFTS = () => {
         <h1>nfts</h1>
        <div className='nfts-container'>
         {nft && nft.length > 0 && nft.map((asset) => (
-           <div key={asset.id} className="card lg:card-side card-bordered nft-container">
+           <div key={asset.id} className={"card lg:card-side card-bordered nft-container"}>
              <div className="nft-credentials">
                <img src={asset?.image_thumbnail_url || defaultImage} alt="nft" className='nft-image'/>
                 <div className='nft-info'>
@@ -49,7 +49,7 @@ const NFTS = () => {
                 </div>
                 <div className="stat-container">
                 <div className="asset-">Creator</div> 
-                <div className=''>{asset?.creator?.user.username !== null ? asset?.creator?.user.username : 'not available'}</div>
+                <div className=''>{!asset?.creator?.user.username ? 'not available' : asset?.creator?.user.username}</div>
                 </div>
                </div>
                <div className='nft-overview'>
@@ -64,7 +64,7 @@ const NFTS = () => {
                </div>
                </div>
                <div className="text-right desc-link">
-                      <a href={asset?.permalink} className="bg-slate-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full cursor-pointer">View price on OpeanSea</a>
+                      <a href={asset?.permalink} className="bg-slate-400 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full cursor-pointer">Make Offer</a>
                 </div>
              </div>
            </div>

@@ -94,6 +94,10 @@ code {
     color: #777;
 }
 
+.stat-value {
+    font-weight: 500;
+}
+
 .head-statistics p {
     font-size: 1.3rem;
     font-weight: 600;
@@ -101,10 +105,13 @@ code {
 
 .crypt-coin-holder {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .nft-card-holder {
+    width: 18%;
     margin: 2rem 0;
     border: 1px solid var(--light);
     padding: .7rem;
@@ -116,7 +123,7 @@ code {
 }
 
 .coin-card-container {
-    width: 15%;
+    width: 17%;
 }
 
 .crypto-card {
@@ -168,11 +175,12 @@ code {
     border: 1px solid var(--light);
     padding: .5rem;
     margin: 2rem 0;
+    border-radius: .7rem;
 }
 
 .coin-image {
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
 }
 
 .crypto-coins-body {
@@ -263,6 +271,8 @@ code {
 
 .nft-container {
     width: 47%;
+    height: 40vh;
+    overflow-y: scroll;
     margin: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
     padding: 1rem;
@@ -302,6 +312,40 @@ code {
     width: 50%;
     padding: 1rem 0;
     margin: 0 4rem;
+}
+
+.asset-details-container {
+    margin: 1rem 0;
+}
+
+.asset-details-container h1 {
+    font-size: 2.5rem;
+    margin: 2rem 0 1rem 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: var(--pink);
+}
+
+.stat-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-title p {
+    margin: 0 .5rem;
+}
+
+.asset-link {
+    display: flex;
+    padding: .5rem;
+}
+
+.asset-link a {
+    width: 50%;
+}
+
+.asset-link p {
+    width: 50%;
 }
 
 @media screen and (max-width: 1300px) {

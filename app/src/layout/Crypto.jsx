@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import { useGetCoinsQuery } from '../services/cryptoApi';
 import Card from '../shared/Card';
-
+import { Input } from 'antd';
 
 const Crypto = () => {
 
@@ -24,7 +24,7 @@ const Crypto = () => {
     <div className='crypto-cards-container'>
         <h1>Crypto Currencies</h1>
         <div className="search-crypto">
-          <input type="text" className='appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none' placeholder="Search Crypto Currencies" onChange={(e) => setSearch(e.target.value)}/>
+          <Input type="text" className='input input-bordered' placeholder="Search Crypto Currencies" onChange={(e) => setSearch(e.target.value)}/>
         </div>
 
         <div className="crypto-currencies-container">
