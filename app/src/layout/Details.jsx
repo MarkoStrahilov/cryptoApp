@@ -30,7 +30,7 @@ const Details = ({type}) => {
       console.error(error);
     });
 
-  }, [])
+  })
 
   const assetLinks = () => {
 

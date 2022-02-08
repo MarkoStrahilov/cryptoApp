@@ -38,7 +38,7 @@ const LineChart = ({assetName}) => {
       });
 
 
-  }, [])
+  })
 
 
   const coinPrice = []
