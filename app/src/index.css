@@ -13,6 +13,7 @@ code {
 }
 
 :root {
+    --dark-blue: rgb(0, 21, 41);
     --text-primary: #000;
     --bgPrimary: #fff;
     --dark-light: rgb(122, 122, 122);
@@ -41,7 +42,25 @@ code {
 }
 
 .navbar-container {
-    background-color: var(--pink);
+    height: 10vh;
+    display: none;
+    background-color: var(--dark-blue);
+}
+
+.navbar-content {
+    margin: 0 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-content-collapse {
+    border: 1px solid black;
+    font-size: 1.5rem;
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--dark-blue);
 }
 
 .main-container {
@@ -52,13 +71,12 @@ code {
 }
 
 .app-sidebar {
-    background-color: rgb(0, 21, 41);
-    max-width: 19%;
+    background-color: var(--dark-blue);
+    min-width: 19%;
 }
 
 .app-content {
-    flex-grow: 10;
-    max-width: 81%;
+    flex-grow: 11;
 }
 
 .sider-items-container {
@@ -68,11 +86,22 @@ code {
     top: 0;
 }
 
+.sidebar-icons {
+    border: 1px solid white;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
 .sidemar-navigation {
     margin: 1rem 0;
     color: #fff;
     padding: 1rem;
     transition: 0.15s all cubic-bezier(0.39, 0.575, 0.565, 1);
+    display: flex;
+    align-items: center;
 }
 
 .sidemar-navigation:hover {
@@ -236,6 +265,11 @@ code {
     flex-wrap: wrap;
 }
 
+.create-binance-account {
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+}
+
 .create-binance-account h2 {
     color: #fff;
 }
@@ -288,6 +322,7 @@ code {
     margin: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
     padding: 1rem;
+    display: flex;
 }
 
 .nft-image {
@@ -371,11 +406,185 @@ code {
     padding: 1rem;
 }
 
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1521px) {
+    .nfts-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1442px) {
     .news-holder {
         flex-direction: column;
     }
     .news-container {
         width: 70%;
+    }
+    .app-sidebar {
+        display: none;
+    }
+    .navbar-container {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 1223px) {
+    .btn-asset-details {
+        display: none;
+    }
+    .coin-details {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1073px) {
+    .nft-container {
+        width: 43%;
+        margin: 2rem auto;
+    }
+}
+
+@media screen and (max-width: 1041px) {
+    .crypto-coins-card {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1029px) {
+    .nft-container {
+        width: 90%;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .nft-credentials {
+        width: 20%;
+        text-align: center;
+    }
+    .nft-image {
+        width: 130px;
+        height: 90px;
+    }
+    .nft-details {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 966px) {
+    .coin-card-container {
+        width: 40%;
+    }
+    .nft-card-holder {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .coin-symbol {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 723px) {
+    .coin-head {
+        display: 100%;
+    }
+    .nft-credentials {
+        width: 40%;
+    }
+    .nft-details {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 676px) {
+    .crypto-coins-card {
+        width: 100%;
+    }
+    .coin-head {
+        width: 50%;
+    }
+    .crypto-coins-body {
+        width: 50%;
+    }
+    .coin-img-details {
+        margin: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 605px) {
+    .coin-card-container {
+        width: 100%;
+    }
+    .nft-card-holder {
+        width: 100%;
+    }
+    .crypt-coin-holder {
+        flex-direction: column;
+    }
+    .statistics-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .navbar-container {
+        width: 100%;
+    }
+    .news-container {
+        width: 100%;
+    }
+    .search-crypto {
+        text-align: center;
+    }
+    .input-search-crypto {
+        width: 80%;
+        margin: auto;
+        margin: 1rem 0;
+    }
+    .coin-head {
+        text-align: center;
+        width: 100%;
+    }
+    .app-content {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .coins-card-container {
+        width: 90%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        margin: auto;
+    }
+    .crypto-coins-card {
+        width: 100%;
+        margin: 1rem auto;
+    }
+    .coins-head p {
+        display: none;
+    }
+    .coins-head {
+        width: 50%;
+    }
+    .crypto-coins-body {
+        padding: 0 1rem;
+        width: 30%;
+    }
+    .nft-head {
+        width: 100%;
+    }
+    .nft-image {
+        width: 130px;
+    }
+    .coins-head {
+        width: 100%;
+    }
+    .nfts-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .nft-details {
+        width: 100%;
+        margin: none;
     }
 }

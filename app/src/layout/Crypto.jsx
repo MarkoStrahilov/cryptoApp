@@ -31,7 +31,7 @@ const Crypto = () => {
     <div className='crypto-cards-container'>
         <Title text='Crypto Currencies' />
         <div className="search-crypto">
-          <Input type="text" className='input input-bordered m-4' placeholder="Search Crypto Currencies" onChange={(e) => setSearch(e.target.value)}/>
+          <Input type="text" className='input input-bordered m-4 input-search-crypto' placeholder="Search Crypto Currencies" onChange={(e) => setSearch(e.target.value)}/>
         </div>
 
         <div className="crypto-currencies-container">

@@ -62,7 +62,7 @@ const Performing = ({title,subjectData}) => {
                 </div>
           ))}
         </div>
-        <Link to={'/nfts'} className='btn btn-primary'>See more NFTS</Link>
+        <Link to={'/nfts'} className='btn'>See more NFTS</Link>
       </div>
     )
   }

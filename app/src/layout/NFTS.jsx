@@ -32,10 +32,10 @@ const NFTS = () => {
 
   return (
     <div className='nfts-holder'>
-        <Title text="Explore And Buy Unique Nfts" />
+        <Title text="Explore, Discover And Buy Unique Nfts" />
        <div className='nfts-container'>
         {nft && nft.length > 0 && nft.map((asset) => (
-           <div key={asset.id} className={"card lg:card-side card-bordered nft-container"}>
+           <div key={asset.id} className="nft-container">
              <div className="nft-credentials">
                <img src={asset?.image_thumbnail_url || asset?.collection?.banner_image_url || defaultImage} alt="nft" className='nft-image'/>
                 <div className='nft-info'>
@@ -56,7 +56,11 @@ const NFTS = () => {
                 </div>
                 <div className="stat-container">
                 <div className="asset-label">Creator</div> 
-                <div className='asset-value'>{asset?.creator?.user.username === null ? 'not available' : asset?.creator?.user.username}</div>
+                {/* {asset?.creator?.user.username === null ? (
+                   <div className='asset-value'>not available</div>
+                ) : (
+                  <div className='asset-value'>{asset?.creator?.user.username}</div>
+                )} */}
                 </div>
                </div>
                <div className='nft-overview'>

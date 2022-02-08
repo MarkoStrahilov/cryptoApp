@@ -22,29 +22,29 @@ const Card = ({info, space}) => {
         )
   } else {
     return (
-      <div className='crypto-coins-card'>
+      <Link to={`/currency/${info.uuid}`} className='crypto-coins-card'>
        <div className="coins-head">
            <p>{info.name}</p>
-           <img src={info.iconUrl} alt="crypto coin" width={'50px'} height={'50px'}/>
+           <img src={info.iconUrl} alt="crypto coin" width={'50px'} height={'50px'} className='coin-img-details'/>
        </div>
        <div className='crypto-coins-body'>
           <div className="flex">
-          <div className='coin-details'>
+          <div className='coin-details coin-details-credentials'>
                <p>price</p>
                <p> {millify(info.price)}</p>
           </div>
-              <div className='coin-details'>
+              <div className='coin-details coin-change'>
                 <p>change</p>
                 <p className={info.change < 0 ? 'red' : 'green'}>{info.change}</p>
               </div>
-              <div className='coin-details'>
+              <div className='coin-details coin-symbol'>
                <p>symbol</p>
                <p> {info.symbol}</p>
               </div>
           </div>
-          <Link to={`/currency/${info.uuid}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" style={{backgroundColor: info.color}}>Details</Link>
+          <Link to={`/currency/${info.uuid}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full btn-asset-details" style={{backgroundColor: info.color}}>Details</Link>
        </div>
-       </div>
+       </Link>
       )
   }
 

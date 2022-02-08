@@ -16,7 +16,7 @@ const Home = () => {
   )
 
   return (
-  <div>
+  <div className='home-container'>
       <Title text='CryptoCurrency Statistics' />
       <div className="statistics-row">
         <Statistics title='Crypto Currencies' stats={new Intl.NumberFormat( 'en-US', { maximumFractionDigits: 1,notation: "compact" , compactDisplay: "short" }).format(statsData?.totalCoins)} icon='crypto'/>
