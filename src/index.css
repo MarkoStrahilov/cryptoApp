@@ -406,6 +406,11 @@ code {
     padding: 1rem;
 }
 
+.asset-creator {
+    display: flex;
+    align-items: center;
+}
+
 @media screen and (max-width: 1521px) {
     .nfts-container {
         width: 100%;

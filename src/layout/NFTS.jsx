@@ -3,6 +3,7 @@ import { useGetNftsQuery } from '../services/nftApi';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import moment from 'moment';
+import {MdVerifiedUser} from 'react-icons/md'
 import PacmanLoader from "react-spinners/PacmanLoader";
 import Title from '../shared/Title'
 
@@ -18,7 +19,6 @@ const NFTS = () => {
   }, [data])
 
   const [nft, setNft] = useState(data)
-  console.log(nft)
 
   const defaultDesc = 'NFTs are collectable digital assets that hold value, just like how physical art holds value'
   const defaultImage = 'https://www.cnet.com/a/img/9AFTl2qto-rh5zRSeDm3TAmpVy8=/940x0/2021/11/29/f566750f-79b6-4be9-9c32-8402f58ba0ef/richerd.png'
@@ -56,11 +56,11 @@ const NFTS = () => {
                 </div>
                 <div className="stat-container">
                 <div className="asset-label">Creator</div> 
-                {/* {asset?.creator?.user.username === null ? (
+                {asset?.creator?.user.username === null ? (
                    <div className='asset-value'>not available</div>
                 ) : (
-                  <div className='asset-value'>{asset?.creator?.user.username}</div>
-                )} */}
+                  <div className='asset-value asset-creator'>{asset?.creator?.user.username} <MdVerifiedUser style={{color: '#0071bd', margin: '0 .3rem'}}/></div>
+                )}
                 </div>
                </div>
                <div className='nft-overview'>
