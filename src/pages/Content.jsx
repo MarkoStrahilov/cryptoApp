@@ -17,7 +17,7 @@ const Content = () => {
               <Route path='/currency/:id' element={<Details/>} />
               <Route path='/*' element={(
                 <div>
-                  <h1>Error 404</h1>
+                  <h1>Error 404 !!</h1>
                 </div>
               )} />
               </Routes>
