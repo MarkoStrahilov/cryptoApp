@@ -65,6 +65,8 @@ const LineChart = ({assetName}) => {
   };
 
   const options = {
+    maintainAspectRatio: false,
+    responsive: true,
     scales: {
       yAxes: [
         {
@@ -83,7 +85,7 @@ const LineChart = ({assetName}) => {
         <div className="asset-details-container p-3">
         <h1>{assetName} Price in USD for the past week</h1>
         </div>
-        <div>
+        <div className='line-chart'>
         <Line data={data} option={options} width={50} height={15}/>
         </div>
     </div>

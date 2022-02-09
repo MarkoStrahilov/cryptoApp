@@ -16,8 +16,9 @@ const Navbar = () => {
 
   const navbarCollapse = {
     position: "absolute",
-    top: '10%',
+    top: '9%',
     right: '0%',
+    width: '100%',
     border:' 1px solid black',
     display: nav === true ? 'initial' : 'none'
 }
