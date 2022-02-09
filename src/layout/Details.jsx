@@ -30,7 +30,7 @@ const Details = ({type}) => {
       console.error(error);
     });
 
-  })
+  }, [setCrypto])
 
   const assetLinks = () => {
 
@@ -44,6 +44,7 @@ const Details = ({type}) => {
 
     }
   }
+
 
   const details = crypto?.data?.coin;
   return (

@@ -37,8 +37,7 @@ const LineChart = ({assetName}) => {
         console.error(error);
       });
 
-
-  })
+  }, [setHistory])
 
 
   const coinPrice = []
