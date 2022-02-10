@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const navbarCollapse = {
     position: "absolute",
-    top: '9%',
+    top: '10%',
     right: '0%',
     width: '100%',
     border:' 1px solid black',
