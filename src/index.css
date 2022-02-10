@@ -24,6 +24,34 @@ code {
     --light: rgb(179, 179, 179);
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.heading-styles {
+    padding: 1rem;
+    margin: auto;
+}
+
+.heading-styles h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding-bottom: 13px;
+}
+
+.heading-styles h1:before {
+    background-color: var(--pink);
+    content: '';
+    display: block;
+    height: 3px;
+    width: 20%;
+    margin-bottom: 5px;
+}
+
 .loader-container {
     width: 80%;
     margin: auto;
@@ -31,12 +59,6 @@ code {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
 
 .app-container {
@@ -553,6 +575,9 @@ code {
     .app-content {
         width: 50%;
     }
+    .heading-styles h1 {
+        margin-top: 1rem;
+    }
 }
 
 @media screen and (max-width: 500px) {
@@ -585,13 +610,25 @@ code {
     .coins-head {
         width: 100%;
     }
-    .nfts-container {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
     .nft-details {
         width: 100%;
         margin: none;
+    }
+    .nft-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    .nft-credentials {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+    .nft-details {
+        width: 100%;
+        margin: auto;
+        padding: .5rem;
     }
 }

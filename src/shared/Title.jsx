@@ -2,7 +2,9 @@ import React from 'react';
 
 const Title = ({text}) => {
   return (
-    <h2 className='heading'>{text}</h2>
+    <div className='heading-styles'>
+    <h1>{text}</h1>
+    </div>
   )
 };
 
