@@ -54,14 +54,6 @@ const NFTS = () => {
                 <div className="asset-label">Collection</div> 
                 <div className='asset-value'>{asset?.collection?.name}</div>
                 </div>
-                <div className="stat-container">
-                <div className="asset-label">Creator</div> 
-                {asset?.creator?.user.username === null ? (
-                   <div className='asset-value'>not available</div>
-                ) : (
-                  <div className='asset-value asset-creator'>{asset?.creator?.user.username} <MdVerifiedUser style={{color: '#0071bd', margin: '0 .3rem'}}/></div>
-                )}
-                </div>
                </div>
                <div className='nft-overview'>
                  <div className="stat-container">
