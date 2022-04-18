@@ -17,7 +17,6 @@ const News = () => {
   }, [data?.value])
 
   const [news,setNews] = useState(data?.value)
-  console.log(news)
 
   const genRandImage = () => {
     const defaultImages = ['https://www.trustetc.com/wp-content/uploads/2018/09/cryptocurrency-accepted.jpg',
